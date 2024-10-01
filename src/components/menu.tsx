@@ -4,8 +4,8 @@ import Link from "next/link";
 interface IMenu {
     op1: string,
     op2: string,
-    op3: boolean,
-    op4: number
+    op3: string,
+    op4: string
 }
 
 export const Menu: React.FC<IMenu> = ({op1, op2, op3, op4}) => {
@@ -13,8 +13,8 @@ export const Menu: React.FC<IMenu> = ({op1, op2, op3, op4}) => {
         <nav className="text-preto font-robFont flex justify-center items-center gap-5 bg-blue-300">
           <Link href={ROUTES.home}><p>{op1}</p></Link>
           <Link href={ROUTES.maths}><p>{op2}</p></Link>
-          <p>{op3}</p>
-          <p>{op4}</p>
+          <Link href={ROUTES.generalFunction}><p>{op3}</p></Link>
+          <Link href={ROUTES.cards}><p>{op4}</p></Link>
         </nav>
     )
 }

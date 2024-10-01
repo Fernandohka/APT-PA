@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased `}
       >
-        <Menu op1="Home" op2="Maths" op3={true} op4={9} />
+        <Menu op1="Home" op2="Maths" op3="General Function" op4="Cards" />
         {children}
         <Footer op1="Footer da Pagina" op2="Cabo o Footer" />
       </body>

@@ -5,50 +5,47 @@ import React, { useState } from "react";
 const maths:React.FC = () => {
     const [num1, setNum1] = useState<string>("");
     const [num2, setNum2] = useState<string>("");
-    const [soma, setSoma] = useState<number | undefined>();
-    const [subtracao, setSubtracao] = useState<number | undefined>();
-    const [mult, setMult] = useState<number | undefined>();
-    const [divisao, setDivisao] = useState<number | undefined>();
+    const [res, setRes] = useState<number | undefined>();
     const msgError = "Digite um número válido";
 
     const handleSoma = () => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
         if(!isNaN(n1) && !isNaN(n2)){
-            setSoma(n1 + n2);
+            setRes(n1 + n2);
         }
         else {
-            setSoma(undefined);
+            setRes(undefined);
         }
     }
     const handleSubtracao = () => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
         if(!isNaN(n1) && !isNaN(n2)){
-            setSubtracao(n1 - n2);
+            setRes(n1 - n2);
         }
         else {
-            setSubtracao(undefined);
+            setRes(undefined);
         }
     }
     const handleMult = () => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
         if(!isNaN(n1) && !isNaN(n2)){
-            setMult(n1 * n2);
+            setRes(n1 * n2);
         }
         else {
-            setMult(undefined);
+            setRes(undefined);
         }
     }
     const handleDivisao = () => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
         if(!isNaN(n1) && !isNaN(n2) && n2 !== 0){
-            setDivisao(n1 / n2);
+            setRes(n1 / n2);
         }
         else {
-            setDivisao(undefined);
+            setRes(undefined);
         }
     }
 
@@ -67,25 +64,25 @@ const maths:React.FC = () => {
             <div className="flex gap-2">
                 <h2>Soma: </h2>
                 <button onClick={handleSoma}>SOMA </button>
-                {!isNaN(soma ?? NaN) ? soma : msgError}
             </div>
 
             <div className="flex gap-2">
-            <h2>Subtração: </h2>
-            <button onClick={handleSubtracao}>SUBTRAÇÃO </button>
-            {!isNaN(subtracao ?? NaN) ? subtracao : msgError}
+                <h2>Subtração: </h2>
+                <button onClick={handleSubtracao}>SUBTRAÇÃO </button>
             </div>
 
             <div className="flex gap-2">                    
-            <h2>Multiplicação: </h2>
-            <button onClick={handleMult}>MULTIPLICAÇÃO </button>
-            {!isNaN(mult ?? NaN) ? mult : msgError}
+                <h2>Multiplicação: </h2>
+                <button onClick={handleMult}>MULTIPLICAÇÃO </button>
             </div>
 
             <div className="flex gap-2">
-            <h2>Divisão: </h2>
-            <button onClick={handleDivisao}>DIVISÃO </button>
-            {!isNaN(divisao ?? NaN) ? divisao : msgError}
+                <h2>Divisão: </h2>
+                <button onClick={handleDivisao}>DIVISÃO </button>
+            </div>
+
+            <div>
+                {!isNaN(res ?? NaN) ? res : msgError}
             </div>
          </div>
         </>
