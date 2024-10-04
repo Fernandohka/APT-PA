@@ -31,9 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} antialiased overflow-y-hidden`}
+        className={`${roboto.variable} antialiased`}
       >
-        <Menu op1="Home" op2="Maths" op3="General Function" op4="Cards" />
+        <Menu op1="Home" op2="Maths" op3="General Function" op4="Cards" op5="Fetch Nativo" op6="Axios Page" op7="Server Side" />
         {children}
         <Footer op1="Footer da Pagina" op2="Cabo o Footer" />
       </body>
